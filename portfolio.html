@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya M | AI & DS Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        primaryDark: '#4f46e5',
+                        secondary: '#1e293b',
+                        accent: '#10b981',
+                        darkBg: '#0f172a',
+                        lightBg: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'pulse-slow': 'pulse 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .leetcode-icon {
+            position: relative;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+        }
+        
+        .leetcode-icon::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #FFA116;
+            border-radius: 0.2em 0 0 0.2em;
+        }
+        
+        .leetcode-icon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #000;
+            border-radius: 0 0.2em 0.2em 0;
+        }
+
+       #mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+#mobile-menu.max-h-screen {
+    opacity: 1;
+}
+
+/* Ensure proper mobile viewport */
+@media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-br from-darkBg to-secondary text-gray-200">
+    <!-- Floating background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 rounded-full bg-primary/10 blur-xl animate-float-slow"></div>
+        <div class="absolute top-1/3 right-1/4 w-20 sm:w-32 md:w-40 h-20 sm:h-32 md:h-40 rounded-full bg-accent/10 blur-xl animate-float"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-20 sm:w-28 md:w-36 h-20 sm:h-28 md:h-36 rounded-full bg-primary/10 blur-xl animate-float-fast"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-darkBg/80 backdrop-blur-md z-50 transition-all duration-300 border-b border-gray-800/50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <nav class="flex justify-between items-center py-3 md:py-4">
+                <div class="text-xl md:text-2xl font-bold text-primary font-heading hover:animate-pulse">
+                    Surya<span class="text-white">M</span>
+                </div>
+                <ul class="hidden md:flex space-x-6 lg:space-x-8">
+                    <li><a href="#home" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Home</a></li>
+                    <li><a href="#education" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Education</a></li>
+                    <li><a href="#projects" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Projects</a></li>
+                    <li><a href="#experience" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Experience</a></li>
+                    <li><a href="#skills" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Skills</a></li>
+                    <li><a href="#contact" class="text-gray-300 text-sm lg:text-base font-medium relative transition-all hover:text-primary after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full hover:scale-105">Contact</a></li>
+                </ul>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-2xl text-gray-300 hover:text-primary transition-all">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 right-0 bg-darkBg/95 backdrop-blur-md border-t border-gray-800/50 transition-all duration-300 ease-in-out max-h-0 overflow-hidden">
+    <ul class="py-2">
+        <li><a href="#home" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Home</a></li>
+        <li><a href="#education" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Education</a></li>
+        <li><a href="#projects" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Projects</a></li>
+        <li><a href="#experience" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Experience</a></li>
+        <li><a href="#skills" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Skills</a></li>
+        <li><a href="#contact" class="block py-2 px-6 text-gray-300 text-sm font-medium transition-all hover:text-primary hover:bg-gray-800/30">Contact</a></li>
+    </ul>
+</div>
+    </header>
+
+<!-- Hero Section -->
+<section id="home" class="pt-24 md:pt-32 pb-16 md:pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-darkBg/80 to-secondary/80 z-0"></div>
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Reversed flex-col for mobile (image first) -->
+        <div class="flex flex-col md:flex-row items-center">
+            <!-- Image div moved to top for mobile -->
+            <div class="md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-0 animate-float">
+                <div class="relative">
+                    <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl hover:shadow-primary/50 transition-all duration-500">
+                        <img src="images/surya.jpg" alt="Surya M" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary/20 animate-pulse-slow"></div>
+                    <div class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-accent/20 animate-pulse"></div>
+                </div>
+            </div>
+            
+            <!-- Content div moved below for mobile -->
+            <div class="md:w-1/2 order-2 md:order-1 animate-fade-in">
+                <span class="inline-block bg-primary/20 text-primary text-xs sm:text-sm px-3 py-1 sm:px-4 sm:py-1 rounded-full font-medium mb-3 md:mb-4 border border-primary/30">
+                    AI & Data Science Engineer
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 font-heading bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                    Hi, I'm <span class="text-white">Surya M</span>
+                </h1>
+                <p class="text-base sm:text-lg text-gray-300 mb-6 max-w-lg">
+                    A passionate AI & Data Science student with expertise in software development, IoT, and machine learning. I build innovative solutions to real-world problems.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#projects" class="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-primary text-white font-medium rounded-full transition-all duration-300 hover:bg-primaryDark hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30 text-center">View My Work</a>
+                    <a href="#contact" class="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border-2 border-primary text-primary font-medium rounded-full transition-all duration-300 hover:bg-primary hover:text-white hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30 text-center">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-20 bg-gradient-to-br from-gray-900/80 to-darkBg/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Education
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">My academic journey and qualifications</p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Vertical line for desktop -->
+                <div class="hidden md:block absolute inset-0 left-1/2 w-0.5 bg-gradient-to-b from-primary to-accent"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative w-full pl-8 pr-0 md:pl-0 md:pr-10 md:w-1/2 mb-8 md:mb-12 md:left-0 hover:transform hover:translate-x-1 md:hover:translate-x-2 transition-transform duration-300">
+                    <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm relative hover:shadow-primary/20 hover:border-primary/30 transition-all duration-300">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-1 sm:mb-2">B.Tech - AI & Data Science</h3>
+                        <span class="text-xs sm:text-sm text-gray-400 font-medium mb-2 sm:mb-3 block">2021 - 2025</span>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">PSNA College Of Engineering And Technology</p>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">CGPA: 7.8</p>
+                    </div>
+                    <div class="absolute top-6 left-0 md:left-auto md:right-[-8px] sm:md:right-[-10px] w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-gray-800 border-3 sm:border-4 border-primary rounded-full z-10 hover:animate-pulse"></div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative w-full pl-8 pr-0 md:pl-0 md:pr-10 md:w-1/2 mb-8 md:mb-12 md:left-1/2 hover:transform hover:-translate-x-1 md:hover:-translate-x-2 transition-transform duration-300">
+                    <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm relative hover:shadow-primary/20 hover:border-primary/30 transition-all duration-300">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-1 sm:mb-2">Higher Secondary Education</h3>
+                        <span class="text-xs sm:text-sm text-gray-400 font-medium mb-2 sm:mb-3 block">2020 - 2021</span>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">SBK Boys Higher Secondary School</p>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">Percentage: 88.5%</p>
+                    </div>
+                    <div class="absolute top-6 left-0 md:left-[-8px] sm:md:left-[-10px] w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-gray-800 border-3 sm:border-4 border-primary rounded-full z-10 hover:animate-pulse"></div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="relative w-full pl-8 pr-0 md:pl-0 md:pr-10 md:w-1/2 mb-8 md:mb-12 md:left-0 hover:transform hover:translate-x-1 md:hover:translate-x-2 transition-transform duration-300">
+                    <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm relative hover:shadow-primary/20 hover:border-primary/30 transition-all duration-300">
+                        <h3 class="text-lg sm:text-xl font-bold text-primary mb-1 sm:mb-2">Secondary Education</h3>
+                        <span class="text-xs sm:text-sm text-gray-400 font-medium mb-2 sm:mb-3 block">2018 - 2019</span>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">Sarva Seva Matriculation School</p>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-300">Percentage: 93.5%</p>
+                    </div>
+                    <div class="absolute top-6 left-0 md:left-auto md:right-[-8px] sm:md:right-[-10px] w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-gray-800 border-3 sm:border-4 border-primary rounded-full z-10 hover:animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-20 bg-gradient-to-br from-darkBg/80 to-gray-900/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Projects
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">Some of my notable work</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg border border-gray-700/50 backdrop-blur-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/30 animate-float-slow">
+                    <div class="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800">
+                        <i class="fas fa-book text-white text-4xl sm:text-5xl"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Library Management App</h3>
+                        <p class="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 text-gray-300">Developed a Cordova-based mobile app to manage library books, users, and lending operations with offline support.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mt-3 sm:mt-4">
+                            <span class="bg-blue-900/50 text-blue-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-blue-800/50">HTML</span>
+                            <span class="bg-blue-900/50 text-blue-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-blue-800/50">CSS</span>
+                            <span class="bg-blue-900/50 text-blue-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-blue-800/50">JavaScript</span>
+                            <span class="bg-blue-900/50 text-blue-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-blue-800/50">Apache Cordova</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg border border-gray-700/50 backdrop-blur-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20 hover:border-green-500/30 animate-float">
+                    <div class="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-green-600 to-green-800">
+                        <i class="fas fa-toilet text-white text-4xl sm:text-5xl"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Automated Public Toilet Maintenance</h3>
+                        <p class="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 text-gray-300">Created a smart hygiene monitoring and auto-cleaning system using IoT sensors and TinyML for public toilets.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mt-3 sm:mt-4">
+                            <span class="bg-green-900/50 text-green-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-green-800/50">Embedded C</span>
+                            <span class="bg-green-900/50 text-green-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-green-800/50">ESP32</span>
+                            <span class="bg-green-900/50 text-green-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-green-800/50">TinyML</span>
+                            <span class="bg-green-900/50 text-green-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-green-800/50">GSM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg border border-gray-700/50 backdrop-blur-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-500/30 animate-float-fast">
+                    <div class="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-cyan-600 to-cyan-800">
+                        <i class="fas fa-life-ring text-white text-4xl sm:text-5xl"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">OceanGuard Tracking System</h3>
+                        <p class="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 text-gray-300">Built a GPS-enabled safety system with mesh-networked buoys and wearable alerts for offshore fishermen.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mt-3 sm:mt-4">
+                            <span class="bg-cyan-900/50 text-cyan-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-cyan-800/50">GPS</span>
+                            <span class="bg-cyan-900/50 text-cyan-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-cyan-800/50">LoRa/WiFi</span>
+                            <span class="bg-cyan-900/50 text-cyan-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-cyan-800/50">Mesh Network</span>
+                            <span class="bg-cyan-900/50 text-cyan-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-cyan-800/50">IoT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg border border-gray-700/50 backdrop-blur-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-500/20 hover:border-amber-500/30 animate-float">
+                    <div class="h-40 sm:h-48 flex items-center justify-center bg-gradient-to-br from-amber-600 to-amber-800">
+                        <i class="fas fa-coffee text-white text-4xl sm:text-5xl"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Coffee Shop Management System <span class="text-xs sm:text-sm font-normal text-gray-400">[1 Month]</span></h3>
+                        <p class="text-xs sm:text-sm md:text-base mb-3 sm:mb-4 text-gray-400">Developed a CodeIgniter-based web app to manage shop menus, orders, and admin actions with AJAX and Bootstrap.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2 mt-3 sm:mt-4">
+                            <span class="bg-amber-900/50 text-amber-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-amber-800/50">PHP</span>
+                            <span class="bg-amber-900/50 text-amber-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-amber-800/50">MySQL</span>
+                            <span class="bg-amber-900/50 text-amber-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-amber-800/50">Bootstrap</span>
+                            <span class="bg-amber-900/50 text-amber-300 px-2 py-1 text-xs sm:text-sm rounded-full border border-amber-800/50">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-20 bg-gradient-to-br from-gray-900/80 to-darkBg/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Experience
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">My professional journey</p>
+            </div>
+            
+            <div class="flex justify-center mb-8 sm:mb-10">
+                <div class="flex space-x-1 sm:space-x-2 bg-gray-800/50 rounded-lg p-1 shadow border border-gray-700/50 backdrop-blur-sm">
+                    <button class="tab-btn px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-lg font-medium transition-colors bg-primary text-white hover:bg-primaryDark">Internships</button>
+                    <button class="tab-btn px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-lg font-medium transition-colors text-gray-300 hover:text-white hover:bg-gray-700/50">Leadership</button>
+                </div>
+            </div>
+            
+            <div class="tab-content bg-gray-800/50 rounded-xl shadow-lg p-4 sm:p-6 md:p-8 border border-gray-700/50 backdrop-blur-sm">
+                <!-- Experience 1 -->
+                <div class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700/50 last:mb-0 last:pb-0 last:border-0 group hover:bg-gray-700/30 rounded-lg p-3 sm:p-4 transition-all duration-300">
+                    <h3 class="text-lg sm:text-xl font-bold text-primary group-hover:text-white transition-colors">Embedded Systems with AI & IoT</h3>
+                    <span class="text-sm sm:text-base text-gray-300 font-semibold group-hover:text-white transition-colors">NSIC</span>
+                    <span class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 block group-hover:text-gray-400 transition-colors">2023</span>
+                    <p class="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors">Gained hands-on and theoretical experience integrating Artificial Intelligence with IoT-based embedded systems for real-world automation solutions.</p>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700/50 last:mb-0 last:pb-0 last:border-0 group hover:bg-gray-700/30 rounded-lg p-3 sm:p-4 transition-all duration-300">
+                    <h3 class="text-lg sm:text-xl font-bold text-primary group-hover:text-white transition-colors">Data Analyst</h3>
+                    <span class="text-sm sm:text-base text-gray-300 font-semibold group-hover:text-white transition-colors">Innobyte Services</span>
+                    <span class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 block group-hover:text-gray-400 transition-colors">2023</span>
+                    <p class="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors">Worked on data analysis projects combining machine learning with data visualization; built a Power BI dashboard to monitor order delivery performance and optimize operations.</p>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700/50 last:mb-0 last:pb-0 last:border-0 group hover:bg-gray-700/30 rounded-lg p-3 sm:p-4 transition-all duration-300">
+                    <h3 class="text-lg sm:text-xl font-bold text-primary group-hover:text-white transition-colors">Web Application Development</h3>
+                    <span class="text-sm sm:text-base text-gray-300 font-semibold group-hover:text-white transition-colors">Infinity Software Solution Ltd</span>
+                    <span class="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3 block group-hover:text-gray-400 transition-colors">2022</span>
+                    <p class="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors">Completed a 3-month internship focused on full-stack web development; developed a Coffee Shop Management System using CodeIgniter MVC, MySQL, and Bootstrap.</p>
+                </div>
+            </div>
+            
+            <div class="tab-content bg-gray-800/50 rounded-xl shadow-lg p-4 sm:p-6 md:p-8 border border-gray-700/50 backdrop-blur-sm hidden">
+                <!-- Leadership 1 -->
+                <div class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700/50 last:mb-0 last:pb-0 last:border-0 group hover:bg-gray-700/30 rounded-lg p-3 sm:p-4 transition-all duration-300">
+                    <h3 class="text-lg sm:text-xl font-bold text-primary group-hover:text-white transition-colors">Hack 2 Skill</h3>
+                    <p class="text-sm sm:text-base text-gray-300 font-semibold group-hover:text-white transition-colors">Campus Representative</p>
+                </div>
+                
+                <!-- Leadership 2 -->
+                <div class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700/50 last:mb-0 last:pb-0 last:border-0 group hover:bg-gray-700/30 rounded-lg p-3 sm:p-4 transition-all duration-300">
+                    <h3 class="text-lg sm:text-xl font-bold text-primary group-hover:text-white transition-colors">IMUN</h3>
+                    <p class="text-sm sm:text-base text-gray-300 font-semibold group-hover:text-white transition-colors">Campus Ambassador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-20 bg-gradient-to-br from-darkBg/80 to-gray-900/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Skills
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">My technical expertise</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Programming Skills -->
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300 animate-float-slow">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center text-white">
+                        <i class="fas fa-code mr-3 text-primary"></i> Programming
+                    </h3>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Java</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Python</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools Skills -->
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300 animate-float">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center text-white">
+                        <i class="fas fa-tools mr-3 text-primary"></i> Tools
+                    </h3>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>GitHub</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Power BI</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>XAMPP</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300 animate-float-fast">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center text-white">
+                        <i class="fas fa-brain mr-3 text-primary"></i> Soft Skills
+                    </h3>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Problem Solving</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Team Building</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 sm:mb-5">
+                        <div class="flex justify-between mb-1 text-xs sm:text-sm text-gray-300">
+                            <span>Time Management</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-blue-400 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-gray-900/80 to-darkBg/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Achievements
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">My notable accomplishments</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Achievement 1 -->
+                <div class="bg-gray-800/50 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm text-center transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/30 animate-float-slow">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-900/30 text-green-400 border border-green-800/50 flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">2nd Place in Hackathon</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Won 2nd place with cash reward in Hackathon 2k24 at Kumarasamy College of Engineering, Karur.</p>
+                </div>
+                
+                <!-- Achievement 2 -->
+                <div class="bg-gray-800/50 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm text-center transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/30 animate-float">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-900/30 text-green-400 border border-green-800/50 flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">IEEE Project Selection</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Project selected for final round of the International project conference IEEE Yesisit 12 project Expo.</p>
+                </div>
+                
+                <!-- Achievement 3 -->
+                <div class="bg-gray-800/50 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm text-center transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/30 animate-float-fast">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-900/30 text-green-400 border border-green-800/50 flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">Certifications</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Microsoft Azure AI Engineer, Cybersecurity Fundamentals, RPA and Automation, Power BI, and Business Analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-gray-900/80 to-darkBg/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                    Certifications
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400">My professional certifications</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-base sm:text-lg font-bold mb-2 text-white flex items-center">
+                        <i class="fas fa-certificate mr-3 text-blue-400"></i> Microsoft Azure AI Engineer Associate
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400">ICT ACADEMY</p>
+                </div>
+                
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-base sm:text-lg font-bold mb-2 text-white flex items-center">
+                        <i class="fas fa-shield-alt mr-3 text-blue-400"></i> Fundamentals of Cybersecurity
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Cisco</p>
+                </div>
+                
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-base sm:text-lg font-bold mb-2 text-white flex items-center">
+                        <i class="fas fa-robot mr-3 text-blue-400"></i> Introduction To RPA And Automation
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Ui Path</p>
+                </div>
+                
+                <div class="bg-gray-800/50 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-primary/20 transition-all duration-300">
+                    <h3 class="text-base sm:text-lg font-bold mb-2 text-white flex items-center">
+                        <i class="fas fa-chart-bar mr-3 text-blue-400"></i> Power BI, Business Analytics
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Simplilearn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-16 md:py-20 bg-gradient-to-br from-darkBg/80 to-gray-900/80 backdrop-blur-sm">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 relative inline-block font-heading after:content-[''] after:absolute after:bottom-[-10px] sm:after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 sm:after:w-16 after:h-1 sm:after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full">
+                Contact Me
+            </h2>
+            <p class="text-sm sm:text-base text-gray-400">Get in touch with me</p>
+        </div>
+        
+        <div class="flex flex-col items-center"> <!-- Centered container -->
+            <div class="bg-gray-800/50 rounded-xl shadow-lg border border-gray-700/50 p-6 w-full max-w-md"> <!-- Centered card -->
+                <div class="space-y-4">
+                    <div class="text-center"> <!-- Centered contact info -->
+                        <p class="text-gray-400">Email</p>
+                        <a href="mailto:clvrsurya@gmail.com" class="text-primary hover:underline">clvrsurya@gmail.com</a>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-gray-400">Phone</p>
+                        <a href="tel:+919381246564" class="text-primary hover:underline">+91 9381246564</a>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-gray-400">Location</p>
+                        <p class="text-gray-300">Chennai, Tamil Nadu, India</p>
+                    </div>
+                </div>
+
+                <!-- Centered Send Email Button -->
+                <div class="mt-6 text-center">
+                    <button onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=clvrsurya@gmail.com', '_blank')"
+                            class="px-6 py-2 bg-primary hover:bg-primaryDark text-white rounded-md transition inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Send Email
+                    </button>
+                </div>
+            </div>
+
+            <!-- Centered Social Links -->
+            <div class="flex gap-4 mt-8 justify-center">
+                <a href="https://github.com/54Surya/Surya" class="w-10 h-10 rounded-full bg-gray-700/50 text-gray-300 border border-gray-600/50 flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="http://www.linkedin.com/in/surya-m-1a7457240" class="w-10 h-10 rounded-full bg-gray-700/50 text-gray-300 border border-gray-600/50 flex items-center justify-center transition-all duration-300 hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/20">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.hackerrank.com/profile/suryam21ad" class="w-10 h-10 rounded-full bg-gray-700/50 text-gray-300 border border-gray-600/50 flex items-center justify-center transition-all duration-300 hover:bg-green-500 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/20">
+                    <i class="fab fa-hackerrank"></i>
+                </a>
+                <a href="https://leetcode.com/u/54Surya/" class="w-10 h-10 rounded-full bg-gray-700/50 text-gray-300 border border-gray-600/50 flex items-center justify-center transition-all duration-300 hover:bg-yellow-500 hover:text-black hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/20">
+                    <span class="leetcode-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 text-white py-8 sm:py-12 border-t border-gray-800/50 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 font-heading hover:animate-pulse">
+                    Surya<span class="text-primary">M</span>
+                </div>
+                <p class="mb-4 sm:mb-6 text-xs sm:text-sm text-gray-400">AI & Data Science Engineer | Software Developer | IoT Enthusiast</p>
+                <div class="flex justify-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                    <a href="https://github.com/54Surya/Surya" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center transition-all duration-300 hover:bg-gray-700 hover:text-white hover:transform hover:-translate-y-1">
+                        <i class="fab fa-github text-sm sm:text-base"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/surya-m-1a7457240" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center transition-all duration-300 hover:bg-blue-600 hover:text-white hover:transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/suryam21ad" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center transition-all duration-300 hover:bg-green-500 hover:text-white hover:transform hover:-translate-y-1">
+                        <i class="fab fa-hackerrank text-sm sm:text-base"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/54Surya/" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center transition-all duration-300 hover:bg-yellow-500 hover:text-black hover:transform hover:-translate-y-1">
+                        <span class="leetcode-icon" aria-label="LeetCode"></span>
+                    </a>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-500">© 2025 Surya M. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   
+</body>
+ <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', function() {
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('max-h-0');
+        mobileMenu.classList.toggle('max-h-screen');
+        
+        // Change icon
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+    
+    // Close menu when clicking links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.add('max-h-0');
+            mobileMenu.classList.remove('max-h-screen');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+        });
+    });
+});
+            
+            // Tab functionality for experience section
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    tabBtns.forEach(b => b.classList.remove('bg-primary', 'text-white'));
+                    // Hide all tab contents
+                    tabContents.forEach(content => content.classList.add('hidden'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('bg-primary', 'text-white');
+                    // Show corresponding tab content
+                    tabContents[index].classList.remove('hidden');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            // Sticky header effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-lg', 'bg-darkBg');
+                } else {
+                    header.classList.remove('shadow-lg', 'bg-darkBg');
+                }
+            });
+    </script>
+</html>
